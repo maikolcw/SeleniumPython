@@ -39,7 +39,7 @@ time.sleep(2)
 search_bar.send_keys(Keys.ENTER)
 
 
-# Find search bar element by XPath
+# Find search bar element by CSS Selector
 search_bar = c_driver.find_element(By.CSS_SELECTOR, "#APjFqb")
 search_bar.clear()
 search_bar.send_keys("CSSSelector")
