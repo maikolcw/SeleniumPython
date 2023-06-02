@@ -11,7 +11,7 @@ chrome_driver.get("https://www.google.com/")
 chrome_driver.maximize_window()
 # grab and print browser title
 print(chrome_driver.title)
-# closes current browser
+# closes current browser tab
 chrome_driver.close()
-# closes all browsers
+# closes all browser tabs
 # chrome_driver.quit()

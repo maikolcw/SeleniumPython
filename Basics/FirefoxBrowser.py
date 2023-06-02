@@ -15,7 +15,7 @@ firefox_driver.get("https://www.google.com/")
 firefox_driver.maximize_window()
 # grab and print browser title
 print(firefox_driver.title)
-# closes current browser
+# closes current browser tab
 firefox_driver.close()
-# closes all browsers
+# closes all browser tabs
 # firefox_driver.quit()

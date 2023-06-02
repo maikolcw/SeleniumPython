@@ -10,6 +10,7 @@ c_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install(
 c_driver.get("https://www.google.com/")
 c_driver.maximize_window()
 
+
 # Find search bar element by Name
 search_bar = c_driver.find_element(By.NAME, "q")
 # Type "Selenium" in search bar
@@ -47,11 +48,13 @@ time.sleep(2)
 search_bar.send_keys(Keys.ENTER)
 time.sleep(2)
 
+
 # Find link element by Link Text
 css_functions_link = c_driver.find_element(By.LINK_TEXT, "CSS Functions")
 # Click element
 css_functions_link.click()
 time.sleep(2)
+
 
 # Find link element by Partial Link Text
 attr_link = c_driver.find_element(By.PARTIAL_LINK_TEXT, "attr")
@@ -68,10 +71,12 @@ time.sleep(2)
 search_bar.send_keys(Keys.ENTER)
 time.sleep(2)
 
+
 # Find search bar element by Tag Name
 search_bar = c_driver.find_element(By.TAG_NAME, "textarea")
 search_bar.clear()
 search_bar.send_keys("Tag Name")
+
 
 # Find more than one element
 a_elements = c_driver.find_elements(By.TAG_NAME, "a")
