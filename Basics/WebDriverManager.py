@@ -16,5 +16,6 @@ f_driver.get("https://www.mozilla.org/")
 f_driver.maximize_window()
 print(f_driver.title)
 
+# closes all browsers
 c_driver.quit()
 f_driver.quit()

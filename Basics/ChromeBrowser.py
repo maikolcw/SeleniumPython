@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
 # Selenium v4 syntax
+# Absolute path to your chromedriver.exe
 chrome_service = Service("C:\\Users\\Myo\\Documents\\SeleniumWebDrivers\\chromedriver.exe")
 chrome_driver = webdriver.Chrome(service=chrome_service)
 

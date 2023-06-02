@@ -6,6 +6,7 @@ from selenium.webdriver.firefox.options import Options
 options = Options()
 # To get firefox binary
 options.binary_location = r'C:\Program Files\Mozilla Firefox\firefox.exe'
+# Absolute path to your geckodriver.exe
 firefox_service = Service("C:\\Users\\Myo\\Documents\\SeleniumWebDrivers\\geckodriver.exe")
 firefox_driver = webdriver.Firefox(service=firefox_service, options=options)
 
