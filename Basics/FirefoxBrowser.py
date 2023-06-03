@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
 
+# We need the corresponding web driver to interface with the browser we want to use
+
 # Selenium v4 syntax
 options = Options()
 # To get firefox binary

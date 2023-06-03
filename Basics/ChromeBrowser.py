@@ -1,6 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
+# We need the corresponding web driver to interface with the browser we want to use
+
 # Selenium v4 syntax
 # Absolute path to your chromedriver.exe
 chrome_service = Service("C:\\Users\\Myo\\Documents\\SeleniumWebDrivers\\chromedriver.exe")

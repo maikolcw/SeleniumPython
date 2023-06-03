@@ -5,6 +5,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 from selenium.webdriver.common.keys import Keys
 
+# List of ways we can locate web elements
+
 # Setup
 c_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 c_driver.get("https://www.google.com/")

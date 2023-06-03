@@ -5,6 +5,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 from selenium.webdriver.common.keys import Keys
 
+# How to navigate back and forward and simple properties like maximize, minimize, and refresh the browser
+
 # Setup
 c_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
 c_driver.get("https://www.google.com/")
