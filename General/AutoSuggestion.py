@@ -30,10 +30,17 @@ search_bar.send_keys("Selenium")
 time.sleep(1)
 
 # Locate list of suggestions
-list_elements = c_driver.find_elements(By.XPATH, "(//ul[@role='listbox'])[1]")
+list_elements = c_driver.find_elements(By.XPATH, "//div[@class='erkvQe']//ul[@role='listbox']/li")
 time.sleep(1)
-# Print out suggestions
+# Find number of suggestions
+print(len(list_elements))
 for element in list_elements:
+    # Print out suggestions
     print(element.text)
+    # Find suggestion with supplements and click suggestion
+    if "supplements" in element.text:
+        element.click()
+        time.sleep(2)
+        break
 
 c_driver.close()
