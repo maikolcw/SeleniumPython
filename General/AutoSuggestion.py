@@ -40,7 +40,7 @@ for element in list_elements:
     # Find suggestion with supplements and click suggestion
     if "supplements" in element.text:
         element.click()
-        time.sleep(2)
         break
+time.sleep(2)
 
 c_driver.close()
