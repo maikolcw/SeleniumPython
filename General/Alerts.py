@@ -16,7 +16,7 @@ c_driver.switch_to.frame("iframeResult")
 # We locate the try button to click, to activate the alert
 try_it_button = c_driver.find_element(By.XPATH, "//button[normalize-space()='Try it']")
 try_it_button.click()
-# Printing out the alert test
+# Printing out the alert text
 print("The alert message is: % s" % c_driver.switch_to.alert.text)
 time.sleep(2)
 
