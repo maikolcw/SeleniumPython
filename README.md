@@ -10,3 +10,6 @@ Other packages used:
 * Webdriver manager - manages binary drivers that interface with different browsers for us - pip install webdriver-manager
 * Openpyxl - Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files - pip install openpyxl
 * Faker - generates fake data - pip install Faker
+
+
+Note: It is better to use dynamic waits than to use time.sleep, time.sleep here is to mainly show the results of the automation
