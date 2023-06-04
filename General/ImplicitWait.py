@@ -14,7 +14,7 @@ c_driver.maximize_window()
 # Here the XPATH is wrong, and an error is thrown
 c_driver.find_element(By.XPATH, "//textarea[@id='APjFq']").send_keys("Found")
 
-# If we uncomment the following lines and comment the above, Selenium will wait max 5seconds for element to be found
+# If we uncomment the following lines and comment the above, Selenium will wait max 5 seconds for element to be found
 # Wait max 5 seconds for following
 # c_driver.implicitly_wait(5)
 # c_driver.find_element(By.XPATH, "//textarea[@id='APjFq']").send_keys("Found")
