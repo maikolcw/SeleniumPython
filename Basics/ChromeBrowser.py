@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
 # We need the corresponding web driver to interface with the browser we want to use
+# Or we can use WebDriver Manager
 
 # Selenium v4 syntax
 # Absolute path to your chromedriver.exe

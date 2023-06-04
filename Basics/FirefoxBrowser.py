@@ -3,6 +3,7 @@ from selenium.webdriver.firefox.service import Service
 from selenium.webdriver.firefox.options import Options
 
 # We need the corresponding web driver to interface with the browser we want to use
+# Or we can use WebDriver Manager
 
 # Selenium v4 syntax
 options = Options()
