@@ -24,3 +24,8 @@ def test_login(data_for_login):
 @pytest.mark.parametrize("a, b, result", [(2, 2, 4), (5, 10, 15), (3, 6, 10)])
 def test_addition(a, b, result):
     assert a + b == result
+
+
+# This test utilizes custom command options from conftest.py
+def test_navigate_to_about_page(browser_setup):
+    print("Navigate to About successful")

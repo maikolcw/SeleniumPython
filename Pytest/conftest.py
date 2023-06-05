@@ -30,3 +30,29 @@ def banking_set_up():
     yield
     print("Logout")
     print("Close browser")
+
+
+# Our fixture we will use in Parameters_test.py. This fixture takes in the browser fixture and checks for browser type
+# Depending on text used for --browser it will launch a different browser for our session
+@pytest.fixture(scope="session")
+def browser_setup(browser):
+    if browser == "firefox":
+        print("Launch Firefox browser")
+    elif browser == "chrome":
+        print("Launch Chrome browser")
+    else:
+        print("Launching Edge browser")
+    print("Navigate to site C")
+    yield
+    print("Close browser")
+
+
+# Add custom options in command line
+def pytest_addoption(parser):
+    parser.addoption("--browser")
+
+
+# Helper fixture that returns command line value of --browser option
+@pytest.fixture(scope="session")
+def browser(request):
+    return request.config.getoption("--browser")
