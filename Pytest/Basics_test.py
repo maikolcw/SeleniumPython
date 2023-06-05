@@ -1,6 +1,6 @@
 # To run pytest on PyCharm IDE, top right left of play icon click drop down, select edit configurations,
-# click "+" to add new config, select pytest, on right side for target select the pytest file, click OK.
-# Now you can hit green play button on top right to run tests on selected pytest file.
+# click "+" to add new config, select pytest, on right side, for target, select the pytest file, click OK.
+# Now you can click green play button on top right to run tests on selected pytest file.
 # Pytest will automatically find all python test files if they start with test_*.py or end with *_test.py if you run
 # pytest in command line at source directory
 # On command line pytest -v will give more verbose
