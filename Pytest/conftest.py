@@ -11,6 +11,7 @@ import pytest
 # @pytest.fixture(autouse=True)
 # The scope session will run at start up, the yield portion will run when all tests in the session are finished
 # @pytest.fixture(scope="session", autouse=True)
+@pytest.fixture
 def main_set_up():
     print("Launch browser")
     print("Navigate to site B")
