@@ -1,6 +1,3 @@
-import pytest
-
-
 # To run pytest on PyCharm IDE, top right left of play icon click drop down, select edit configurations,
 # click "+" to add new config, select pytest, on right side for target select the pytest file, click OK.
 # Now you can hit green play button on top right to run tests on selected pytest file.
