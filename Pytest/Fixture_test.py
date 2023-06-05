@@ -23,6 +23,6 @@ def test_fill_last_name_correctly():
     print("Proper last name has been entered")
 
 
-# Takes fixture from conftest.py, an alternative writing fixture for every file
+# Takes fixture from conftest.py, an alternative to writing fixture for every file
 def test_fill_phone_number_correctly(banking_set_up):
     print("Proper phone number has been entered")
