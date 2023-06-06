@@ -9,12 +9,10 @@ from webdriver_manager.chrome import ChromeDriverManager
 @pytest.fixture(scope="class")
 def expedia_setup(request):
     c_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-    wait = WebDriverWait(c_driver, 10)
+    # wait = WebDriverWait(c_driver, 10)
     c_driver.get("https://www.expedia.ca/?locale=en_CA")
     c_driver.maximize_window()
     # Set the web driver for request
     request.cls.driver = c_driver
-    # Pass our wait object
-    request.cls.wait = wait
     yield
     c_driver.close()
