@@ -24,3 +24,8 @@ class TestExpediaStaysModule():
         text = self.home_page.return_travellers_text()
         print(text)
         assert text == "1 room, 2 travellers"
+
+    def test_travellers_default_adult_count(self):
+        text = self.home_page.return_adult_count_default()
+        print(text)
+        assert text == "2"
