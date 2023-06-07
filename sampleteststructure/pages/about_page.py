@@ -16,4 +16,6 @@ class AboutPage(BaseDriver):
     ABOUT_LOGO = "//a[@href='/home']//img[@alt='Expedia Group Logo']"
 
     def is_about_logo_visible(self):
-        return self.driver.find_element(By.XPATH, self.ABOUT_LOGO).is_displayed()
+        boolean = self.driver.find_element(By.XPATH, self.ABOUT_LOGO).is_displayed()
+        self.log.info("Returned about logo is visible: % s" % boolean)
+        return boolean

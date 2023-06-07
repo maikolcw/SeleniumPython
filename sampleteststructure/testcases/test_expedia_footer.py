@@ -17,5 +17,4 @@ class TestExpediaFooter():
     def test_1_check_about_logo_is_present(self):
         self.home_page.scroll_down_and_click_about_link()
         boolean = self.about_page.is_about_logo_visible()
-        print(boolean)
         assert boolean == True
