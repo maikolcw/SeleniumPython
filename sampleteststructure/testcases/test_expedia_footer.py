@@ -1,6 +1,3 @@
-import time
-import datetime
-
 import pytest
 
 from sampleteststructure.pages.home_page import HomePage
@@ -17,9 +14,7 @@ class TestExpediaFooter():
         self.about_page = AboutPage(self.driver)
 
     def test_1_check_about_logo_is_present(self):
-        self.home_page.scroll_down(2500)
-        self.home_page.click_about_link()
-        time.sleep(2)
+        self.home_page.scroll_down_and_click_about_link()
         boolean = self.about_page.is_about_logo_visible()
         print(boolean)
-        time.sleep(2)
+        assert boolean == True

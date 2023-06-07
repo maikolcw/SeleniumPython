@@ -101,3 +101,7 @@ class HomePage(BaseDriver):
 
     def click_about_link(self):
         self.wait.until(expected_conditions.element_to_be_clickable((By.XPATH, self.ABOUT))).click()
+
+    def scroll_down_and_click_about_link(self):
+        self.scroll_down(2500)
+        self.click_about_link()
