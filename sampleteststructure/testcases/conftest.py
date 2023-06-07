@@ -12,6 +12,8 @@ from webdriver_manager.firefox import GeckoDriverManager
 # request is used to deliver web driver to test method that uses this fixture
 @pytest.fixture(scope="class")
 def expedia_setup(request, browser):
+    # From command line you can select browser type ex. --browser firefox
+    # You can add more like Edge, Chromium, and Brave, this is just an example
     if browser == "firefox":
         driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
     elif browser == "chrome":
