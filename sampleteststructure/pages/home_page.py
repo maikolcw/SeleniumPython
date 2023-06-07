@@ -4,11 +4,15 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from sampleteststructure.base.base_driver import BaseDriver
+from sampleteststructure.utilities.utils import Utils
 
 
 # HomePage contains all locators and functions related to HomePage
 # HomePage inherits from BaseDriver to use BaseDriver functions like scroll down
 class HomePage(BaseDriver):
+    utils = Utils()
+    log = utils.custom_logger()
+
     def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver

@@ -5,8 +5,6 @@ from sampleteststructure.utilities.utils import Utils
 
 # Contains our base functions which can be used by all classes in pages package
 class BaseDriver:
-    utils = Utils()
-    log = utils.custom_logger()
 
     def __init__(self, driver):
         self.driver = driver
