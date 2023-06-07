@@ -36,7 +36,9 @@ class HomePage(BaseDriver):
     DATE_STATUS = "class"
 
     def return_search_bar_text(self):
-        return self.driver.find_element(By.XPATH, self.SEARCH_BAR).get_attribute(self.SEARCH_BAR_ATTRIBUTE)
+        text = self.driver.find_element(By.XPATH, self.SEARCH_BAR).get_attribute(self.SEARCH_BAR_ATTRIBUTE)
+        self.log.info("Returned search bar text is: % s" % text)
+        return text
 
     def click_search_bar(self):
         self.driver.find_element(By.XPATH, self.SEARCH_BAR).click()
@@ -45,16 +47,20 @@ class HomePage(BaseDriver):
         self.click_search_bar()
         text = self.driver.find_element(By.XPATH, self.DESTINATION_SEARCH_BAR) \
             .get_attribute(self.DESTINATION_SEARCH_BAR_ATTRIBUTE)
+        self.log.info("Returned destination search bar text is: % s" % text)
         self.action_chains.send_keys(Keys.ESCAPE).perform()
         return text
 
     def return_travellers_text(self):
-        return self.driver.find_element(By.XPATH, self.TRAVELLERS_LINK).text
+        text = self.driver.find_element(By.XPATH, self.TRAVELLERS_LINK).text
+        self.log.info("Returned travellers text is: % s" % text)
+        return text
 
     def open_travellers_and_return_default_adult_count(self):
         self.wait.until(expected_conditions.element_to_be_clickable((By.XPATH, self.TRAVELLERS_LINK))).click()
         text = self.driver.find_element(By.XPATH, self.TRAVELLERS_ADULT_COUNT_DEFAULT).get_attribute(self.ADULT_COUNT)
         self.action_chains.send_keys(Keys.ESCAPE).perform()
+        self.log.info("Returned default adult count is: % s" % text)
         return text
 
     def click_travellers_link(self):
@@ -77,6 +83,7 @@ class HomePage(BaseDriver):
         self.click_default_adult_traveller_add_button()
         final_count = self.return_default_adult_count()
         self.action_chains.send_keys(Keys.ESCAPE).perform()
+        self.log.info("Returned initial count: % s and final count: % s" % (initial_count, final_count))
         return [initial_count, final_count]
 
     def click_check_in_date(self):
@@ -95,6 +102,7 @@ class HomePage(BaseDriver):
             if "disabled" in element.get_attribute(self.DATE_STATUS):
                 disabled_date_count += 1
         self.action_chains.send_keys(Keys.ESCAPE).perform()
+        self.log.info("Returned number of checkin disabled dates is: % d" % disabled_date_count)
         return disabled_date_count
 
     def click_about_link(self):
