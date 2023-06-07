@@ -2,13 +2,12 @@ import time
 import datetime
 
 import pytest
-import softest
 
 from sampleteststructure.pages.home_page import HomePage
 
 
 @pytest.mark.usefixtures("expedia_setup")
-class TestExpediaStaysModule(softest.TestCase):
+class TestExpediaStaysModule():
 
     @pytest.fixture(autouse=True)
     def class_setup(self):
@@ -40,6 +39,6 @@ class TestExpediaStaysModule(softest.TestCase):
         assert int(results[0]) + 1 == int(results[1])
 
     def test_6_check_in_disabled_dates(self):
-        count = self.home_page.return_number_of_disabled_dates()
+        count = self.home_page.return_number_of_checkin_disabled_dates()
         print(count)
         assert datetime.date.today().day - 1 == count

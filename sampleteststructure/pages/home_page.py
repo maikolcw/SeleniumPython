@@ -29,17 +29,22 @@ class HomePage(BaseDriver):
     TRAVELLERS_DONE_BUTTON = "//button[normalize-space()='Done']"
     CHECK_IN_BUTTON = "//button[@id='d1-btn']"
     CHECK_IN_DISABLED_DATES = "//div[@class='uitk-calendar']//div[1]//table[1]//button"
+    ABOUT = "//a[normalize-space()='About']"
 
     # Attributes
     SEARCH_BAR_ATTRIBUTE = "aria-label"
     DESTINATION_SEARCH_BAR_ATTRIBUTE = "placeholder"
     ADULT_COUNT = "value"
+    DATE_STATUS = "class"
 
     def return_search_bar_text(self):
         return self.driver.find_element(By.XPATH, self.SEARCH_BAR).get_attribute(self.SEARCH_BAR_ATTRIBUTE)
 
-    def return_destination_search_bar_text(self):
+    def click_search_bar(self):
         self.driver.find_element(By.XPATH, self.SEARCH_BAR).click()
+
+    def return_destination_search_bar_text(self):
+        self.click_search_bar()
         text = self.driver.find_element(By.XPATH, self.DESTINATION_SEARCH_BAR) \
             .get_attribute(self.DESTINATION_SEARCH_BAR_ATTRIBUTE)
         self.action_chains.send_keys(Keys.ESCAPE).perform()
@@ -84,12 +89,15 @@ class HomePage(BaseDriver):
             expected_conditions.visibility_of_all_elements_located((By.XPATH, self.CHECK_IN_DISABLED_DATES)))
         return list_of_elements
 
-    def return_number_of_disabled_dates(self):
+    def return_number_of_checkin_disabled_dates(self):
         self.click_check_in_date()
         list_of_elements = self.get_check_in_dates()
         disabled_date_count = 0
         for element in list_of_elements:
-            if "disabled" in element.get_attribute("class"):
+            if "disabled" in element.get_attribute(self.DATE_STATUS):
                 disabled_date_count += 1
         self.action_chains.send_keys(Keys.ESCAPE).perform()
         return disabled_date_count
+
+    def click_about_link(self):
+        self.wait.until(expected_conditions.element_to_be_clickable((By.XPATH, self.ABOUT))).click()
