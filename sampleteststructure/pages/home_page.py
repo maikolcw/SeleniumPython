@@ -1,15 +1,13 @@
-import time
-
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-
-# HomePage inherits from BaseDriver to use BaseDriver functions like scroll down
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from sampleteststructure.base.base_driver import BaseDriver
 
 
+# HomePage contains all locators and functions related to HomePage
+# HomePage inherits from BaseDriver to use BaseDriver functions like scroll down
 class HomePage(BaseDriver):
     def __init__(self, driver):
         super().__init__(driver)
@@ -70,7 +68,7 @@ class HomePage(BaseDriver):
 
     def click_default_adult_traveller_add_button(self):
         self.wait.until(expected_conditions.element_to_be_clickable((By.XPATH, self.
-                                                                     TRAVELLERS_ADULT_COUNT_DEFAULT_INCREASE_BUTTON))).\
+                                                                     TRAVELLERS_ADULT_COUNT_DEFAULT_INCREASE_BUTTON))). \
             click()
 
     def add_adult_traveller_and_return_count(self):

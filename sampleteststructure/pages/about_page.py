@@ -1,11 +1,10 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-
-# HomePage inherits from BaseDriver to use BaseDriver functions like scroll down
 from selenium.webdriver.support.wait import WebDriverWait
 from sampleteststructure.base.base_driver import BaseDriver
 
 
+# AboutPage contains all locators and functions related to AboutPage
 class AboutPage(BaseDriver):
     def __init__(self, driver):
         super().__init__(driver)

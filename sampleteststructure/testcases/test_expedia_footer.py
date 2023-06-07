@@ -8,6 +8,7 @@ from sampleteststructure.pages.about_page import AboutPage
 class TestExpediaFooter():
 
     # Set up page objects
+    # TestExpediaFooter uses both the HomePage and AboutPage class
     @pytest.fixture(autouse=True)
     def class_setup(self):
         self.home_page = HomePage(self.driver)

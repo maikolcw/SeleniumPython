@@ -1,8 +1,5 @@
-import time
 import datetime
-
 import pytest
-
 from sampleteststructure.pages.home_page import HomePage
 
 
