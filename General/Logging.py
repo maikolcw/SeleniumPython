@@ -1,26 +1,76 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
-import time
+import logging
 
-# Setup
-c_driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
-c_driver.get("https://twitter.com/i/flow/login")
-c_driver.maximize_window()
-time.sleep(2)
+# One method to use logging, comment line 7-8 if you're using the other method
+# Set logging config, filename is destination file, filemode is write, log level is DEBUG and above
+# Format sets the logging format, for complete list, check out official documentation
+# https://docs.python.org/3/library/logging.html#formatter-objects
+# logging.basicConfig(level=logging.DEBUG, filename=".\\Results\\logs.log", filemode="w",
+#                     format='%(asctime)s - %(levelname)s : %(message)s', datefmt="%m/%d/%Y %I:%M:%S %p")
 
-# Different ways of taking screenshots for error messages
-# Find an element and take a screenshot of the element
-sign_in = c_driver.find_element(By.XPATH, "(//div[@class='css-1dbjc4n r-14lw9ot r-6koalj r-16y2uox r-1wbh5a2'])[1]")
-sign_in.screenshot(".\\Results\\signin.png")
 
-# Take screenshot of the browser before warning message
-c_driver.get_screenshot_as_file(".\\Results\\signin_nowarning.png")
+# Levels of logging, if set to warning then only warning and above (warning, error, critical) are recorded
+# DEBUG - Detailed information, typically of interest only when diagnosing problems.
+# INFO - Confirmation that things are working as expected.
+# WARNING - An indication that something unexpected happened, or indicative of some problem in the near future
+# (e.g. ‘disk space low’). The software is still working as expected.
+# ERROR - Due to a more serious problem, the software has not been able to perform some function.
+# CRITICAL - A serious error, indicating that the program itself may be unable to continue running.
 
-# Take screenshot of the browser after clicking next button
-next_button = c_driver.find_element(By.XPATH, "//span[contains(text(),'Next')]")
-next_button.click()
-c_driver.save_screenshot(".\\Results\\signin_warning.png")
+# Another method to log
+def sample_logger():
+    # create logger
+    logger = logging.getLogger(__name__)
+    logger.setLevel(logging.DEBUG)
+    # create console handler or file handler
+    console_handler = logging.StreamHandler()
+    file_handler = logging.FileHandler(".\\Results\\customlogs.log")
+    # create formatter - change how logs are formatted
+    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s : %(message)s', datefmt="%m/%d/%Y %I:%M:%S %p")
+    # add formatter to console or file handler
+    console_handler.setFormatter(formatter)
+    file_handler.setFormatter(formatter)
+    # add console handler to logger
+    logger.addHandler(console_handler)
+    logger.addHandler(file_handler)
+    # application code - log messages
+    logger.debug("Debug statement")
+    logger.info("Info statement")
+    logger.warning("Warning statement")
+    logger.error("Error statement")
 
-c_driver.close()
+
+def addition(a, b):
+    return a + b
+
+
+def subtraction(a, b):
+    return a - b
+
+
+def multiplication(a, b):
+    return a * b
+
+
+def division(a, b):
+    if b == 0:
+        return 0
+    elif a == 0:
+        return 0
+    else:
+        return a / b
+
+
+sum_value = addition(5, 5)
+subtraction_value = subtraction(20, 5)
+multiplication_value = multiplication(10, 10)
+division_value = division(10, 2)
+
+# Takes config from line 6
+# Comment lines 70-73 if using sample_logger()
+# logging.debug("Debugging: result of addition is % d" % sum_value)
+# logging.info("Info: result of subtraction is % d" % subtraction_value)
+# logging.warning("Warning: result of multiplication is % d" % multiplication_value)
+# logging.error("Error: result of division is % d" % division_value)
+
+# second method
+sample_logger()
