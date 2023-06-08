@@ -1,5 +1,6 @@
 import inspect
 import logging
+import csv
 from openpyxl import Workbook, load_workbook
 
 
@@ -41,4 +42,18 @@ class Utils():
                 row.append(sheet.cell(row=i, column=j).value)
             data_list.append(row)
         print(data_list)
+        return data_list
+
+    @staticmethod
+    def read_data_from_csv(file_name):
+        data_list = []
+        # Open CSV file
+        csv_data = open(file_name, "r")
+        # Create CSV reader
+        reader = csv.reader(csv_data)
+        # Skip first line
+        next(reader)
+        # Add CSV data to data_list
+        for row in reader:
+            data_list.append(row)
         return data_list
