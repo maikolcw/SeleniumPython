@@ -13,6 +13,7 @@ Other packages used:
 * Pytest - Testing framework that scales to support complex functional testing for applications and libraries - pip install pytest
 * Softest - Supports the soft assert style of testing - pip install softest
 * Ddt - A library to multiply test cases - pip install ddt
+* PyYAML - YAML parser and emitter for Python - pip install PyYAML
 
 
 Note: It is better to use dynamic waits than to use time.sleep, time.sleep here is to mainly show the results of the automation
