@@ -1,0 +1,3 @@
+To use pytest-html to generate html reports use
+pytest -vs --html=report.html --self-contained-html test_expedia_stays_module.py
+in testcases directory or supply full path. Sample command lines are shown in Pytest\Basics_test.py

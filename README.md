@@ -14,6 +14,7 @@ Other packages used:
 * Softest - Supports the soft assert style of testing - pip install softest
 * Ddt - A library to multiply test cases - pip install ddt
 * PyYAML - YAML parser and emitter for Python - pip install PyYAML
+* Pytest-html - Pytest-html is a plugin for pytest that generates a HTML report for test results - pip install pytest-html
 
 
 Note: It is better to use dynamic waits than to use time.sleep, time.sleep here is to mainly show the results of the automation
