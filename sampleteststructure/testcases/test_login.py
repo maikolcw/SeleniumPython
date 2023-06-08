@@ -21,7 +21,14 @@ class TestExpediaLogin(softest.TestCase):
     #     error_message_is_visible = self.signin_page.sign_in_with_email_and_return_if_error_message_is_displayed(email)
     #     assert error_message_is_visible is True
 
-    @file_data("..\\testdata\\testdata.json")
-    def test_bad_login_email_from_json(self, email):
+    # Takes data from json file
+    # @file_data("..\\testdata\\testdata.json")
+    # def test_bad_login_email_from_json(self, email):
+    #     error_message_is_visible = self.signin_page.sign_in_with_email_and_return_if_error_message_is_displayed(email)
+    #     assert error_message_is_visible is True
+
+    # Takes data from yaml file
+    @file_data("..\\testdata\\testdata.yaml")
+    def test_bad_login_email_from_yaml(self, email):
         error_message_is_visible = self.signin_page.sign_in_with_email_and_return_if_error_message_is_displayed(email)
         assert error_message_is_visible is True
