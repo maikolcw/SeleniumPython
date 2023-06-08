@@ -1,5 +1,4 @@
 import pytest
-
 from sampleteststructure.pages.home_page import HomePage
 from sampleteststructure.pages.about_page import AboutPage
 
@@ -14,7 +13,7 @@ class TestExpediaFooter():
         self.home_page = HomePage(self.driver)
         self.about_page = AboutPage(self.driver)
 
-    def test_1_check_about_logo_is_present(self):
+    def test_check_about_logo_is_present(self):
         self.home_page.scroll_down_and_click_about_link()
         boolean = self.about_page.is_about_logo_visible()
-        assert boolean == True
+        assert boolean is True

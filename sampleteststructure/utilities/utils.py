@@ -10,13 +10,13 @@ class Utils():
         self.log_level = log_level
 
     def custom_logger(self):
-        # Set class/method name
+        # Set to class name, helps with troubleshooting when looking at automation log
         logger_name = inspect.stack()[1][3]
         # logger creation
         logger = logging.getLogger(logger_name)
         logger.setLevel(self.log_level)
         # create handler
-        file_handler = logging.FileHandler("..\\Reports\\automation.log")
+        file_handler = logging.FileHandler("..\\Reports\\automation.log", mode="a")
         # create formatter and add to handler
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s : %(message)s',
                                       datefmt="%m/%d/%Y %I:%M:%S %p")

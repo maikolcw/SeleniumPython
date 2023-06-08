@@ -10,7 +10,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 
 # request is used to deliver web driver to tests that uses this fixture
-@pytest.fixture(scope="class")
+@pytest.fixture(autouse=True)
 def expedia_setup(request, browser, url):
     # From command line you can select browser type ex. --browser firefox
     # You can add more like Edge, Chromium, and Brave, this is just an example

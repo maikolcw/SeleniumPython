@@ -11,6 +11,8 @@ Other packages used:
 * Openpyxl - Python library to read/write Excel 2010 xlsx/xlsm/xltx/xltm files - pip install openpyxl
 * Faker - generates fake data - pip install Faker
 * Pytest - Testing framework that scales to support complex functional testing for applications and libraries - pip install pytest
+* Softest - Supports the soft assert style of testing - pip install softest
+* Ddt - A library to multiply test cases - pip install ddt
 
 
 Note: It is better to use dynamic waits than to use time.sleep, time.sleep here is to mainly show the results of the automation
