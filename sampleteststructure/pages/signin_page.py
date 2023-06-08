@@ -37,5 +37,6 @@ class SigninPage(BaseDriver):
         email_element.send_keys(email)
         self.driver.find_element(By.XPATH, self.CONTINUE).click()
         error_message_is_visible = self.driver.find_element(By.XPATH, self.EMAIL_ERROR_MESSAGE).is_displayed()
-        self.log.info("Returned error message is visible: % s" % error_message_is_visible)
+        self.log.info("Returned error message is visible: % s and email used is: % s" %
+                      (error_message_is_visible, email))
         return error_message_is_visible

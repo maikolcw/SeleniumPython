@@ -1,0 +1,8 @@
+___
+test1:
+  email: johnemail.com
+test2:
+  email: bademail
+test3:
+  email: fake@email
+...
